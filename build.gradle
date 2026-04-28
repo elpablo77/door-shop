@@ -1,0 +1,8 @@
+plugins {
+    id 'base'
+}
+
+group = 'com.doorshop'
+version = '0.0.1-SNAPSHOT'
+
+description = 'door-shop meta project'

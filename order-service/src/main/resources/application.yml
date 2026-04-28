@@ -1,0 +1,27 @@
+server:
+  port: 8083
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:d498ad819605256a32607bf42d199fb70ec9cb8dc2cf97500858ce8672818b15}
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5435}/${DB_NAME:orders_db}
+    username: ${DB_USER:orders_user}
+    password: ${DB_PASSWORD:orderspass}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
